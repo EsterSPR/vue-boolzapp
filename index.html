@@ -42,11 +42,11 @@
                     </div>
 
                     <div class="row" id="contact-bar-container">
-                        <div class="container contact-bar w-100">
-                            <div class="row d-flex justify-content-between py-2">
+                        <div class="container contact-bar w-100" v-for="contact in contacts">
+                            <div class="row d-flex justify-content-between py-2"> 
                                 <div class="col-7 d-flex align-items-center">
-                                    <img src="./img/avatar_1.jpg" alt="pfp">
-                                    <p class="mx-2">Michele<span class="grey-subtitle">Ultimo messaggio inviato</span></p>
+                                    <img :src="contact.avatar" alt="pfp">
+                                    <p class="mx-2">{{ contact.name }}<span class="grey-subtitle">Ultimo messaggio inviato</span></p>
                                 </div>
                                 <div class="col-5 mt-3 text-end">
                                     <p class="msg-time">12:00</p>

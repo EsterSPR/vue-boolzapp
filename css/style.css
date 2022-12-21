@@ -84,6 +84,7 @@ img[alt="pfp"] {
 #contact-bar-container {
     height: 73%;
     background-color: #F9F9F9;
+    overflow: scroll;
 }
 
 /*CONTACT BAR*/
