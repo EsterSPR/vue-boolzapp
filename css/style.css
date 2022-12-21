@@ -3,3 +3,25 @@
     margin: 0;
     padding: 0;
 }
+
+#greenbar {
+    background-color: #009688;
+    position: relative;
+    width: 100vw;
+    height: 15vh;
+}
+
+#app {
+    position: absolute;
+    height: 94vh;
+    width: 80vw;
+    left: 10vw;
+    right: 10vw;
+    top: 3vh;
+    bottom: 3vh;
+}
+
+.container, .row, #contacts-container, #chat-container {
+    height: 100%;
+    border: 1px solid darkgray;
+}
