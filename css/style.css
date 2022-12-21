@@ -21,7 +21,151 @@
     bottom: 3vh;
 }
 
-.container, .row, #contacts-container, #chat-container {
+#contacts-container {
     height: 100%;
-    border: 1px solid darkgray;
+    border-right: 1px solid lightgray;
+}
+
+/*PROFILE BAR*/
+
+#profile-bar {
+    background-color: #EAEAEA;
+    height: 10%;
+}
+
+#profile-bar p, #profile-bar i {
+    margin-top: 13px;
+    margin-bottom: 10px;
+}
+
+#profile-bar i {
+    color: #B1B1B1;
+    font-size: 15pt;
+    font-weight: bold;
+}
+
+img[alt="pfp"] {
+    height: 50px;
+    border-radius: 50%;
+}
+
+/*NOTIFICATIONS BAR*/
+
+#notifications-bar {
+    background-color: #8EDAFC;
+    height: 12%;
+}
+
+.fa-bell-slash {
+    color: #8EDAFC;
+    background-color: #fff;
+    padding: 14px 12px 14px 13px;
+    border-radius: 50%;
+    font-size: 15pt;
+}
+
+#notifications-link {
+    color: darkgray;
+}
+
+/*SEARCH BAR*/
+
+#search-bar {
+    background-color: #F9F9F9;
+    height: 5%;
+}
+
+.fa-magnifying-glass {
+    color: darkgray;
+}
+
+/*CONTACT BAR CONTAINER*/
+
+#contact-bar-container {
+    height: 73%;
+    background-color: #F9F9F9;
+}
+
+/*CONTACT BAR*/
+
+.contact-bar {
+    border-bottom: 1px solid lightgray;
+    height: 75px;
+}
+
+.contact-bar:hover {
+    cursor: pointer;
+    background-color: #EAEBEB;
+}
+
+/*CHAT CONTAINER*/
+
+.grey-subtitle {
+    color: darkgray;
+    font-size: 11px;
+    display: block;
+}
+
+#chat-profile-bar {
+    background-color: #EAEAEA;
+    height: 10%;
+}
+
+#chat-profile-bar i {
+    color: #B1B1B1;
+    font-size: 15pt;
+    font-weight: bold;
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+
+#chat-profile-bar p {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#chat-messages-container {
+    height: 83%;
+    background-image: url(../img/mine.jpg);
+}
+
+/*MESSAGES CONTAINER*/
+
+.msg-me {
+    background-color: #D6F9BA;
+    padding: 15px 15px 1px 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    text-align: right;
+    text-align: left;
+    font-size: 11pt;
+}
+
+.msg-contact {
+    background-color: #FFFFFF;
+    padding: 15px 15px 1px 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 11pt;
+}
+
+.msg-time {
+    color: darkgray;
+    font-size: 7pt;
+    margin: -20px auto 3px auto;
+    text-align: right;
+}
+
+/*MESSAGE BAR*/
+
+#chat-message-bar {
+    background-color: #F3EEEA;
+    height: 7%;
+}
+
+#chat-message-bar i {
+    color: #B1B1B1;
+    font-size: 15pt;
+    font-weight: bold;
+    margin: 17px auto auto 10px;
 }
