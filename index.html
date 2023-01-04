@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body style="background-color: #D8DBD5">
-    <div id="greenbar">
-        
-    </div>
+    <div id="greenbar"></div>
+    
     <div id="app">
         <div class="container h-100">
             <div class="row h-100">
                 <div class="col-5" id="contacts-container">
+                    
                     <div class="row d-flex justify-content-between" id="profile-bar">
                         <div class="col-7 d-flex align-items-center">
                             <img src="./img/avatar_io.jpg" alt="pfp">
@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="row" id="contact-bar-container">
-                        <div class="container contact-bar w-100" v-for="contact in contacts">
+                        <div class="container contact-bar w-100" v-for="(contact, index) in contacts" :class="(i == chatActive) ? 'bg-gray' : ''" @click="selectContact(index)">
                             <div class="row d-flex justify-content-between py-2"> 
                                 <div class="col-7 d-flex align-items-center">
                                     <img :src="contact.avatar" alt="pfp">
@@ -60,7 +60,7 @@
                     <div class="row d-flex justify-content-between" id="chat-profile-bar">
                         <div class="col-7 d-flex align-items-center">
                             <img src="./img/avatar_1.jpg" alt="pfp">
-                            <p class="mx-2">Michele<span class="grey-subtitle">Ultimo accesso oggi alle 12</span></p>
+                            <p class="mx-2">{{ contact[chatActive].name }}<span class="grey-subtitle">Ultimo accesso oggi alle 12</span></p>
                         </div>
                         <div class="col-5 mt-3 text-end">
                             <i class="fa-solid fa-magnifying-glass mx-2"></i>
@@ -72,29 +72,13 @@
                     <div class="row p-5" id="chat-messages-container">
                         <div class="container w-100 d-flex flex-column">
 
-                            <div class="row">
-                                <div class="col-7"></div>
-                                <div class="col-5 msg-me">
-                                    <p>Hai portato a spasso il cane?</p>
-                                    <p class="msg-time">15:30</p>
+                            <div class="msg position-relative">
+                                <div class="msg-text text-wrap">
+                                    Hai portato a spasso il cane?
                                 </div>
+                                <span class="msg-time">15:30</span>
                             </div>
 
-                            <div class="row">
-                                <div class="col-7"></div>
-                                <div class="col-5 msg-me">
-                                    <p>Ricordati di stendere i panni</p>
-                                    <p class="msg-time">15:30</p>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-5 msg-contact">
-                                    <p>Tutto fatto!</p>
-                                    <p class="msg-time">15:30</p>
-                                </div>
-                                <div class="col-7"></div>
-                            </div>
                         </div>
                     </div>
 

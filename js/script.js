@@ -3,6 +3,9 @@ const {createApp} = Vue
 createApp({
     data() {
         return{
+            chatActive: 0,
+            newMessage: '',
+            search: '',
             contacts: [ {
                 name: 'Michele',
                 avatar: 'img/avatar_1.jpg',
@@ -159,5 +162,13 @@ createApp({
                 }
             ] 
         }
-    }
+    },
+    mounted() {
+        console.log('Hello!');
+    },
+    methods: {
+        changeChat(index){
+            this.chatActive = index;
+        },
+    },
 }).mount('#app')
