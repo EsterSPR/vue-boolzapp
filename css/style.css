@@ -96,7 +96,7 @@ img[alt="pfp"] {
 
 .contact-bar:hover {
     cursor: pointer;
-    background-color: lightgray;
+    background-color: rgb(232, 230, 230);
 }
 
 /*CHAT CONTAINER*/
@@ -128,7 +128,7 @@ img[alt="pfp"] {
 #chat-messages-container {
     height: 83%;
     background-image: url(../img/mine.jpg);
-    overflow-y: auto;
+    overflow-y: scroll;
 }
 
 /*MESSAGES CONTAINER*/
@@ -139,14 +139,17 @@ img[alt="pfp"] {
     font-size: 11pt;
 }
   
-.msg-me {
+.sent {
     width: 250px;
-    background-color: #D6F9BA;;
+    background-color: #D6F9BA;
+    margin-bottom: 5px;
+    left: 57%;
 }
   
-.msg-contact {
-    width: 240px;
+.received {
+    width: 250px;
     background-color: #fff;
+    margin-bottom: 5px;
 }
   
 .msg-text{
@@ -155,10 +158,9 @@ img[alt="pfp"] {
 }
   
 .msg-time{
-    position: absolute;
-    right: 5px;
-    bottom: 3px;
     color: darkgray;
+    font-size: 8pt;
+    margin-left: 120px;
 }
 
 /*MESSAGE BAR*/

@@ -1,11 +1,16 @@
-const {createApp} = Vue
+const {
+    createApp
+} = Vue
+
+const dt = luxon.DateTime
 
 createApp({
     data() {
-        return{
-            chatActive: 0,
-            newMessage: '',
-            search: '',
+        return {
+            user: {
+                name: 'Ester',
+                avatar: 'img/avatar_io.jpg'
+            },
             contacts: [ {
                 name: 'Michele',
                 avatar: 'img/avatar_1.jpg',
@@ -160,7 +165,10 @@ createApp({
                         status: 'received'
                     }],
                 }
-            ] 
+            ],
+            chatActive: 0,
+            newMessage: '',
+            searchChat: '',
         }
     },
     mounted() {
@@ -170,5 +178,46 @@ createApp({
         changeChat(index){
             this.chatActive = index;
         },
+        formatDate(){
+            let orarioInvio = this.contacts[this.chatActive].messages.date;
+            orarioInvio.dt.toLocalString(DateTime.TIME_24_SIMPLE);
+            return orarioInvio
+        },
+        getLastMsg(index){
+            if(this.contacts[index].messages.length > 0){
+                return this.contacts[index].messages[this.contacts[index].messages.length - 1].message.slice(0,30) + '...'
+            }
+        },
+        getLastDate(index){
+            if(this.contacts[index].messages.length > 0){
+                return this.contacts[index].messages[this.contacts[index].messages.length - 1].date
+            }
+        },
+        newMessageSend(){
+            this.contacts[this.chatActive].messages.push({
+                message: this.newMessage,
+                date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+                status: 'sent',
+            })
+
+            this.newMessage = '';
+
+            setTimeout(() => {
+                this.contacts[this.chatActive].messages.push({
+                    message: 'Ok!',
+                    date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+                    status: 'received'
+                });
+            }, 1000);
+        },
+        searchChatBar(searchChat){
+            this.contacts.forEach(contact => {
+                if (contact.name.toLowerCase().includes(searchChat.toLowerCase())) {
+                    contact.visible = true;
+                } else {
+                    contact.visible = false;
+                }
+            });
+        }
     },
 }).mount('#app')
